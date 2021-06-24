@@ -9,7 +9,6 @@ csvpath = os.path.join('Resources', 'election_data.csv')
 fields = []
 rows = []
 idList = []
-votes = 0
 winner_votes = 0
 candidates = []
 candidate_votes = []
@@ -34,6 +33,7 @@ with open(csvpath, newline= '') as csvfile:
     
         #sums votes
         total_votes+= 1
+        rows.append(row)
         idList.append(row[0])
         candidates.append(row[2])
       #PRINT
@@ -43,6 +43,20 @@ with open(csvpath, newline= '') as csvfile:
     print("Total Votes: "  +str(total_votes))
     print("---------------------")
 
+    
+    #print out unique values from candidates list
+
+    def unique(candidates):
+
+      unique_list = []
+
+      for x in candidates:
+        if x not in unique_list:
+          unique_list.append(x)
+      for x in unique_list:
+        print(x)
+
+    unique(candidates)
   #gets harder from here
 #--------------------------------------------------------------------------------------------------------------     
     
