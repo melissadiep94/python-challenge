@@ -61,12 +61,8 @@ with open(csvpath, newline= '') as csvfile:
     print("Total no. of months: %d"%(csvreader.line_num - 1))
     print("Net total amount of Profits/Losses: $" +str(total_revenue))
     print("Average Change: $" +str(average_change))
-    print(f"Greatest increase:" +str(greatest_increase))
-    print("at month:")
-    print(months[max_month_increase])
-    print(f"Greatest decrease:" +str(greatest_decrease))
-    print("at month:")
-    print(months[max_month_decrease])
+    print('Greatest increase: ${} at month {}'.format(str(greatest_increase), months[max_month_increase]))
+    print('Greatest decrease: ${} at month {}'.format(str(greatest_decrease), months[max_month_decrease]))
 
     #OUTPUT
     output_file = os.path.join('Analysis','output_file.txt')
@@ -83,15 +79,8 @@ with open(csvpath, newline= '') as csvfile:
             file.write("\n")
             file.write("Average Change: $" +str(average_change))
             file.write("\n")
-            file.write("Greatest increase: $" +str(greatest_increase))
+            file.write('Greatest increase: ${} at month {}'.format(str(greatest_increase), months[max_month_increase]))
             file.write("\n")
-            file.write("==>at month:")
-            file.write(months[max_month_increase])
-            file.write("\n")
-            file.write("Greatest decrease: $"  +str(greatest_decrease))
-            file.write("\n")
-            file.write("==>at month:")
-            file.write(months[max_month_decrease])
-
+            file.write('Greatest decrease: ${} at month {}'.format(str(greatest_decrease), months[max_month_decrease]))
 
 
