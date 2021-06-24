@@ -8,11 +8,7 @@ csvpath = os.path.join('Resources', 'election_data.csv')
 #define the lists
 fields = []
 rows = []
-idList = []
-winner_votes = 0
 candidates = []
-candidate_votes = []
-results = []
 
 # Method 2: Improved Reading using CSV module
 
@@ -34,7 +30,6 @@ with open(csvpath, newline= '') as csvfile:
         #sums votes
         total_votes+= 1
         rows.append(row)
-        idList.append(row[0])
         candidates.append(row[2])
       #PRINT
 
